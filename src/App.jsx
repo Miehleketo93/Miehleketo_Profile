@@ -290,7 +290,7 @@ export default function App() {
                 </a>
               ))}
               <a
-                href="/miehleketo_cv.pdf"
+                href={`${import.meta.env.BASE_URL}miehleketo_cv.pdf`}
                 download
                 style={{ borderColor: PRIMARY, color: PRIMARY }}
                 className="inline-flex items-center gap-2 px-4 py-2 border rounded-lg text-sm hover:bg-red-50 transition-colors"
