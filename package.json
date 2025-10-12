@@ -2,6 +2,7 @@
   "name": "miehleketo-profile",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://Miehleketo93.github.io/Miehleketo_Profile",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
