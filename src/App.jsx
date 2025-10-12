@@ -537,15 +537,58 @@ export default function App() {
               <Briefcase size={28} style={{ color: PRIMARY }} />
               <h2 className="text-2xl font-bold">Professional Experience</h2>
             </div>
-
+        
             <div className="bg-gradient-to-r from-red-50 to-blue-50 border-l-4 px-5 py-4 rounded-lg mb-6" style={{ borderColor: PRIMARY }}>
-              <div className="font-semibold text-lg mb-2">Career Summary</div>
-              <p className="text-gray-700 leading-relaxed">{careerSummary}</p>
+              <div className="font-semibold text-lg mb-3">Professional Overview</div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                With over a decade of experience, Miehleketo Mathebula is a Data Engineer and AI Researcher specializing in intelligent systems for financial governance and sustainable development. He has designed and implemented data solutions for South Africa's leading financial and insurance institutions, driving business performance, regulatory compliance, and innovation. Currently a PhD Candidate in Computer Science at the University of Pretoria, his research focuses on policy-aware AI to strengthen ESG (Environmental, Social, Governance) and SDG (Sustainable Development Goals) governance within regulated financial markets, translating advanced theory into practical, high-impact applications.
+              </p>
+              
+              <div className="mt-4">
+                <div className="font-semibold text-base mb-2">Key Contributions:</div>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: PRIMARY }}></span>
+                    <span><strong>Strategic Agenda for AI in ESG:</strong> Authored a systematic review mapping South Africa's regulatory landscape and establishing a strategic agenda for AI adoption in sustainable finance.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: PRIMARY }}></span>
+                    <span><strong>LFEAR (Language Feature Extraction & Adaptation for Reviews):</strong> Developed a Retrieval-Augmented Generation model for deep sentiment analysis of customer feedback, enhancing consumer protection and corporate accountability.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: PRIMARY }}></span>
+                    <span><strong>LLM-Powered Annotation System:</strong> Created a framework that converts unstructured public feedback into structured data, enabling robust monitoring of the social pillar of ESG.</span>
+                  </li>
+                </ul>
+              </div>
+        
+              <div className="mt-4">
+                <div className="font-semibold text-base mb-2">UN SDG Contributions:</div>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: SECONDARY }}></span>
+                    <span><strong>Goal 16 (Peace, Justice and Strong Institutions):</strong> Advancing transparent AI governance and accountability in financial institutions.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: SECONDARY }}></span>
+                    <span><strong>Goal 9 (Industry, Innovation and Infrastructure):</strong> Driving intelligent, modernized data infrastructure to support sustainable development.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: SECONDARY }}></span>
+                    <span><strong>Goal 10 (Reduced Inequalities):</strong> Providing a data-driven voice to customers, helping identify and address service disparities.</span>
+                  </li>
+                </ul>
+              </div>
+        
+              <p className="text-gray-700 mt-4 italic">
+                Miehleketo is committed to building data systems that are both intelligent and ethical, driving innovation with measurable business value and lasting societal impact in South Africa.
+              </p>
             </div>
-
+        
             <Accordion items={experiences} defaultOpenIndex={0} />
           </div>
         </section>
+
 
         {/* Supervision */}
         <section id="supervision" className="py-8">
