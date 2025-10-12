@@ -352,7 +352,7 @@ export default function App() {
 
               <aside className="text-center">
                 <img
-                  src="/photo.jpg"
+                  src={`${import.meta.env.BASE_URL}photo.jpg`}
                   alt="Miehleketo Mathebula"
                   className="w-48 h-48 rounded-full object-cover mx-auto shadow-xl border-4 border-white"
                 />
@@ -625,7 +625,7 @@ export default function App() {
                 </div>
 
                 <a
-                  href="/miehleketo_cv.pdf"
+                  href={`${import.meta.env.BASE_URL}miehleketo_cv.pdf`}
                   download
                   className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white hover:opacity-90 transition-opacity"
                   style={{ background: PRIMARY }}
