@@ -9,19 +9,28 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repo
       - uses: actions/checkout@v3
 
+      # Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '22'
 
+      # Install dependencies (including devDependencies)
       - name: Install dependencies
-        run: npm install  
+        run: npm install
 
+      # Install Vite globally to avoid permission issues
+      - name: Install Vite globally
+        run: npm install -g vite
+
+      # Build the project
       - name: Build
-        run: npm run build  
+        run: vite build
 
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
