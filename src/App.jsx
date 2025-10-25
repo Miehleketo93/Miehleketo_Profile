@@ -10,6 +10,7 @@ import Research from './components/Research'
 import Supervision from './components/Supervision'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Credentials from './components/Credentials'
 import { PRIMARY } from './constants/Colors'
 
 
@@ -40,6 +41,7 @@ export default function App() {
         <Skills />
         <Projects />
         <Education />
+        <Credentials />
         <Research />
         <Supervision />
         <Contact />

@@ -11,6 +11,7 @@ export default function Header({ scrolled }) {
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
     { href: '#education', label: 'Education' },
+    { href: '#credentials', label: 'Credentials' },
     { href: '#research', label: 'Research' },
     { href: '#supervision', label: 'Supervision' },
     { href: '#contact', label: 'Contact' },
