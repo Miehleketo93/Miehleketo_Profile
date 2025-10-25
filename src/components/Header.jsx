@@ -47,12 +47,12 @@ export default function Header({ scrolled }) {
               </a>
             ))}
             <a
-              href={`${import.meta.env.BASE_URL}miehleketo_cv.pdf`}
+              href={`${import.meta.env.BASE_URL}miehleketo.pdf`} // just disabled it for now
               download
               style={{ borderColor: PRIMARY, color: PRIMARY }}
               className="px-4 py-2 border rounded-lg text-sm hover:bg-red-50 transition-colors flex items-center gap-2"
             >
-              CV
+              RESUME
             </a>
           </nav>
 
