@@ -22,8 +22,73 @@ function Professional({ darkMode }) {
         'Utilize Infrastructure as Code (IaC) to automate the deployment and management of data infrastructure.'
       ]
     },
-    // ... (other experiences remain unchanged)
+    {
+      title: 'Data Engineer',
+      subtitle: 'Absa Group — January 2023 – December 2024',
+      points: [
+        "Utilize Databricks for integrating data from diverse sources such as Hive and SQL Server, orchestrating workflows, and constructing feature stores for data sciences, effectively enhancing data accessibility and usability.",
+        "Create and maintain a feature store in Databricks for data sciences, providing a centralized repository of curated features to accelerate model development and deployment.",
+        "Create data tools for analytics and data science teams, facilitating the building and optimization of data sets to drive business insights and decision-making processes.",
+        "Optimize data ingestion and processing pipelines using Delta Lake's optimization features, resulting in improved performance and scalability.",
+        "Collaborate with cross-functional teams to design and implement robust data architectures leveraging Databricks Delta Lake for enhanced data reliability and efficiency.",
+        "Implement and align to Group Security standards and practices to ensure separation, security, and quality of data.",
+        "Assemble large, complex data sets that meet business requirements and manage the data pipeline.",
+        "Build infrastructure to automate extremely high volumes of data delivery."
+      ]
+    },
+    {
+      title: 'Data Engineer',
+      subtitle: 'FNZ Group — February 2022 – December 2022',
+      points: [
+        'Analyse and understand requirements from stakeholders, and build digital tools, workflows, and reports from scratch.',
+        'ETL development into staging and data warehouse environments. Develop new data extracts and modify ETL processes as required to improve reporting datasets.',
+        'Share collaboration best practices within the development team globally.',
+        'Constantly improve and upgrade the collaborative tools.',
+        "Transform FNZ's internal processes and systems into a digital business.",
+        'Ingest data from a variety of corporate data sources and perform required extract, transform, and load to target databases.',
+        'Data modelling capabilities, designing effective data models in line with Agile methodology.',
+        'Provide OLAP support and end-user training on various cubes used for reporting downstream.'
+      ]
+    },
+    {
+      title: 'Data Engineer',
+      subtitle: 'FNB South Africa — April 2019 – January 2022',
+      points: [
+        'Design and development of ETL scripts using open-source software in a Linux environment.',
+        'Perform operational support of batch jobs in production and responsible for EBucks monthly pay-outs.',
+        'Build extensible data acquisition and integration solutions to meet business requirements.',
+        'Implement processes and logic to extract, transform, and distribute data across one or more data stores.',
+        'Optimize data integration platform to provide optimal performance under increasing data volumes.',
+        'Develop quality standards to ensure data quality and integrity across various database systems.',
+        "Conduct reviews of other integration developers' efforts to ensure consistent methodologies and provide recommendations.",
+        'Work with Analysts and Business Users to translate functional specifications into technical designs.'
+      ]
+    },
+    {
+      title: 'SQL Developer',
+      subtitle: 'SA Underwriters — Jan 2019 – Apr 2019',
+      points: [
+        'Design stable, reliable, and effective databases.',
+        'Design, develop, and maintain appropriately scaled solutions to support data cleansing, integration, and reconciliations.',
+        'Deliver a robust, testable, repeatable framework of jobs and scripts for data management and reporting.',
+        'Build ETL packages for database maintenance and pay-out processes on Microsoft Server (SSIS).',
+        'Create dynamic reports using SSRS.',
+        'Ensure performance, security, and availability of databases.'
+      ]
+    },
+    {
+      title: 'SQL Developer',
+      subtitle: 'Momentum — Oct 2016 – Dec 2018',
+      points: [
+        'Work with databases from a wide variety of vendors and database platforms.',
+        'Develop and maintain ETL and reporting solutions supporting business processes.',
+        'Authored and optimized complex SQL queries, stored procedures, and views within a Microsoft Data Warehouse to boost performance.',
+        'Automated the generation of ad-hoc reports and managed data across a wide variety of vendor database platforms.',
+        'Developed interactive dashboards and reports using Power BI and SSRS to translate business requirements into clear data visualizations'
+      ]
+    }
   ]
+  
 
   return (
     <section id="professional" className="py-8">
