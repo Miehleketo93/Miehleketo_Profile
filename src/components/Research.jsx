@@ -1,8 +1,41 @@
-
 // ============ components/Research.jsx ============
 import React from 'react'
 import { PRIMARY, SECONDARY } from '../constants/Colors'
 import { FaBook, FaUsers } from 'react-icons/fa'
+
+// Data for the research profiles
+const researchProfiles = [
+  {
+    name: 'Google Scholar',
+    href: 'https://scholar.google.com/citations?user=cNxYD3oAAAAJ&hl=en',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg',
+  },
+  {
+    name: 'ORCID',
+    href: 'https://orcid.org/0000-0001-6276-6106',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg',
+  },
+  {
+    name: 'SciProfiles',
+    href: 'https://sciprofiles.com/profile/4034375',
+    logo: `${import.meta.env.BASE_URL}SciProfiles.jpg`, 
+  },
+  {
+    name: 'Scilit',
+    href: 'https://www.scilit.com/scholars/27986005',
+    logo: `${import.meta.env.BASE_URL}Scilit.png`,
+  },
+  {
+    name: 'IEEE Xplore',
+    href: 'https://ieeexplore.ieee.org/author/163529984985511',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Ieee_blue.jpg',
+  },
+  {
+    name: 'ResearchGate',
+    href: 'https://www.researchgate.net/profile/Miehleketo-Mathebula',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg',
+  },
+]
 
 function Research() {
   return (
@@ -83,91 +116,72 @@ function Research() {
         <div className="mt-8">
           <h3 className="font-semibold text-lg mb-3">Research Profiles</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <a
-              href="https://scholar.google.com/citations?user=cNxYD3oAAAAJ&hl=en"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-lg border hover:bg-blue-600 hover:text-white transition-colors text-center"
-              style={{ borderColor: SECONDARY, color: SECONDARY }}
-            >
-              Google Scholar
-            </a>
-            <a
-              href="https://orcid.org/0000-0001-6276-6106"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-lg border hover:bg-red-600 hover:text-white transition-colors text-center"
-              style={{ borderColor: PRIMARY, color: PRIMARY }}
-            >
-              ORCID
-            </a>
-            <a
-              href="https://sciprofiles.com/profile/4034375"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-lg border hover:bg-blue-600 hover:text-white transition-colors text-center"
-              style={{ borderColor: SECONDARY, color: SECONDARY }}
-            >
-              SciProfiles
-            </a>
-            <a
-              href="https://www.scilit.com/scholars/27986005"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-lg border hover:bg-red-600 hover:text-white transition-colors text-center"
-              style={{ borderColor: PRIMARY, color: PRIMARY }}
-            >
-              Scilit
-            </a>
-            <a
-              href="https://ieeexplore.ieee.org/author/163529984985511"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-lg border hover:bg-blue-600 hover:text-white transition-colors text-center"
-              style={{ borderColor: SECONDARY, color: SECONDARY }}
-            >
-              IEEE Xplore
-            </a>
-            <a
-              href="https://www.researchgate.net/profile/Miehleketo-Mathebula"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-lg border hover:bg-red-600 hover:text-white transition-colors text-center"
-              style={{ borderColor: PRIMARY, color: PRIMARY }}
-            >
-              ResearchGate
-            </a>
+            {/* Map over the profiles and apply original styling WITH logos */}
+            {researchProfiles.map((profile, index) => {
+              // Determine colors based on index (alternating pattern from original code)
+              const isEven = index % 2 === 0
+              const color = isEven ? SECONDARY : PRIMARY
+              const hoverBg = isEven ? 'hover:bg-blue-600' : 'hover:bg-red-600'
+
+              return (
+                <a
+                  key={profile.name}
+                  href={profile.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg border ${hoverBg} hover:text-white transition-colors text-center`}
+                  style={{ borderColor: color, color: color }}
+                >
+                  <img
+                    src={profile.logo}
+                    alt="" // Decorative, as text is present
+                    className="h-5 w-5 object-contain"
+                  />
+                  <span>{profile.name}</span>
+                </a>
+              )
+            })}
           </div>
         </div>
 
         {/* Groups & Affiliations */}
-        <div className="mt-8">
-          <h3 className="font-semibold text-lg mb-3">Groups & Affiliations</h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <a
-              href="https://www.blackinai.org/"
-              target="_blank"
-              rel="noreferrer"
-              className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border-l-4 flex items-center gap-3"
-              style={{ borderColor: PRIMARY }}
-            >
-              <FaUsers size={24} color={PRIMARY} />
-              <div>
-                <div className="font-semibold text-gray-900">Black in AI</div>
-                <div className="text-sm text-gray-600">Community member</div>
-              </div>
-            </a>
-            <a
-              href="https://www.dsfsi.co.za/"
-              target="_blank"
-              rel="noreferrer"
-              className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border-l-4 flex items-center gap-3"
-              style={{ borderColor: SECONDARY }}
-            >
-              <FaUsers size={24} color={SECONDARY} />
-              <div>
-                <div className="font-semibold text-gray-900">Data Science for Social Impact</div>
-                <div className="text-sm text-gray-600">Research group member</div>
+                <div className="mt-8">
+                  <h3 className="font-semibold text-lg mb-3">Groups & Affiliations</h3>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <a
+                      href="https://www.blackinai.org/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border-l-4 flex items-center gap-3"
+                      style={{ borderColor: PRIMARY }}
+                    >
+                      {/* --- LOGO ADDED HERE --- */}
+                      <img
+                        src={`${import.meta.env.BASE_URL}blackinai.jpg`}
+                        alt="Black in AI logo"
+                        className="w-10 h-10 object-contain rounded-md flex-shrink-0"
+                      />
+                      <div>
+                        <div className="font-semibold text-gray-900">Black in AI</div>
+                        <div className="text-sm text-gray-600">Community member</div>
+                      </div>
+                    </a>
+                    <a
+                      href="https://www.dsfsi.co.za/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border-l-4 flex items-center gap-3"
+                      style={{ borderColor: SECONDARY }}
+                    >
+                      {/* --- LOGO ADDED HERE --- */}
+                      <img
+                        src={`${import.meta.env.BASE_URL}dsfsi.jpg`}
+                        alt="Data Science for Social Impact logo"
+                        className="w-10 h-10 object-contain rounded-md flex-shrink-0"
+                      />
+                      <div>
+                        <div className="font-semibold text-gray-900">Data Science for Social Impact</div>
+                        <div className="text-sm text-gray-600">Research group member</div>
               </div>
             </a>
           </div>
