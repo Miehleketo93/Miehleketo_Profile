@@ -45,7 +45,6 @@ className={`text-xs sm:text-sm whitespace-nowrap ${
 >
 Data Engineer · PhD Candidate </div> </div> </div>
 
-```
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center gap-6">
         {navItems.map((item) => (
