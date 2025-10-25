@@ -23,10 +23,9 @@ function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
         <div className="grid lg:grid-cols-3 gap-8 items-center">
-
+          
           {/* Text Section */}
-          {/* --- THIS LINE IS UPDATED --- */}
-          <div className="lg:col-span-2 row-start-2 lg:row-start-1">
+          <div className="lg:col-span-2 order-2 lg:order-1">
             <h1 className="text-3xl sm:text-4xl font-extrabold" style={{ color: PRIMARY }}>
               Hello. I'm Miehleketo Mathebula
             </h1>
@@ -89,12 +88,12 @@ function Hero() {
             </div>
           </div>
 
-          {/* --- THIS LINE IS UPDATED --- */}
-          <aside className="flex flex-col items-center justify-start relative -mt-36 lg:-mt-40 z-10 row-start-1 lg:row-start-1">
+          {/* Image Section */}
+          <aside className="flex flex-col items-center justify-start order-1 lg:order-2">
             <img
               src={`${import.meta.env.BASE_URL}photo.jpg`}
               alt="Miehleketo Mathebula"
-              className="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shadow-2xl border-4 border-white"
+              className="w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full object-cover shadow-2xl border-4 border-white mx-auto lg:-mt-6"
             />
             <div className="mt-4 text-center">
               <div className="font-semibold text-lg">Miehleketo Mathebula</div>
