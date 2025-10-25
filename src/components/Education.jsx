@@ -1,9 +1,8 @@
 // ============ components/Education.jsx ============
-import React, { useState } from 'react'
-import { PRIMARY, SECONDARY } from '../constants/Colors'
-function Education() {
+import React from 'react'
+import { PRIMARY, PRIMARY_DARK, SECONDARY, SECONDARY_DARK } from '../constants/Colors'
 
-
+function Education({ darkMode }) {
   const education = [
     {
       degree: 'Doctor of Philosophy (Computer Sciences)',
@@ -37,27 +36,70 @@ function Education() {
     }
   ]
 
+  const primaryColor = darkMode ? PRIMARY_DARK : PRIMARY
+  const secondaryColor = darkMode ? SECONDARY_DARK : SECONDARY
+
   return (
     <section id="education" className="py-8">
-      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+      <div className={`p-6 sm:p-8 rounded-2xl shadow-lg ${
+        darkMode ? 'bg-gray-800' : 'bg-white'
+      }`}>
         <div className="flex items-center gap-3 mb-6">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: PRIMARY }}>
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          <svg 
+            width="28" 
+            height="28" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            style={{ color: primaryColor }}
+          >
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
           </svg>
-          <h2 className="text-2xl font-bold">Education</h2>
+          <h2 className={`text-2xl font-bold ${
+            darkMode ? 'text-white' : 'text-gray-900'
+          }`}>
+            Education
+          </h2>
         </div>
 
         <div className="space-y-4">
           {education.map((edu, index) => (
-            <div key={index} className="flex gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <div className="flex-shrink-0 w-2 rounded-full" style={{ backgroundColor: index === 0 ? PRIMARY : SECONDARY }}></div>
+            <div 
+              key={index} 
+              className={`flex gap-4 p-4 rounded-lg transition-colors ${
+                darkMode 
+                  ? 'bg-gray-900/50 hover:bg-gray-700' 
+                  : 'bg-gray-50 hover:bg-gray-100'
+              }`}
+            >
+              <div 
+                className="flex-shrink-0 w-2 rounded-full" 
+                style={{ backgroundColor: index === 0 ? primaryColor : secondaryColor }}
+              ></div>
               <div className="flex-1">
-                <div className="font-semibold text-gray-900">{edu.degree}</div>
-                <div className="text-gray-700 mt-1">{edu.institution}</div>
-                <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
+                <div className={`font-semibold ${
+                  darkMode ? 'text-white' : 'text-gray-900'
+                }`}>
+                  {edu.degree}
+                </div>
+                <div className={`mt-1 ${
+                  darkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}>
+                  {edu.institution}
+                </div>
+                <div className={`flex items-center gap-4 mt-2 text-sm ${
+                  darkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
                   <span>{edu.period}</span>
                   {edu.grade && (
-                    <span className="px-2 py-0.5 bg-white rounded-full text-xs font-medium" style={{ color: PRIMARY }}>
+                    <span 
+                      className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                        darkMode ? 'bg-gray-800' : 'bg-white'
+                      }`}
+                      style={{ color: primaryColor }}
+                    >
                       Grade: {edu.grade}
                     </span>
                   )}
@@ -70,4 +112,5 @@ function Education() {
     </section>
   )
 }
-export default Education;
+
+export default Education

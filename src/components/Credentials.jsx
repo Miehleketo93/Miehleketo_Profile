@@ -1,9 +1,9 @@
 // ============ components/Credentials.jsx ============
 import React from 'react'
 import { FaCertificate } from 'react-icons/fa'
-import { PRIMARY, SECONDARY } from '../constants/Colors'
+import { PRIMARY, PRIMARY_DARK, SECONDARY, SECONDARY_DARK } from '../constants/Colors'
 
-function Credentials() {
+function Credentials({ darkMode }) {
   const certifications = [
     {
       title: 'Microsoft Certified: Azure Fundamentals',
@@ -14,20 +14,31 @@ function Credentials() {
     },
   ]
 
+  const primaryColor = darkMode ? PRIMARY_DARK : PRIMARY
+  const secondaryColor = darkMode ? SECONDARY_DARK : SECONDARY
+
   return (
     <section id="credentials" className="py-8">
-      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+      <div className={`p-6 sm:p-8 rounded-2xl shadow-lg ${
+        darkMode ? 'bg-gray-800' : 'bg-white'
+      }`}>
         {/* Header */}
         <div className="flex items-center gap-3 mb-4">
-          <FaCertificate size={28} color={PRIMARY} />
-          <h2 className="text-2xl font-bold">Professional Credentials</h2>
+          <FaCertificate size={28} color={primaryColor} />
+          <h2 className={`text-2xl font-bold ${
+            darkMode ? 'text-white' : 'text-gray-900'
+          }`}>
+            Professional Credentials
+          </h2>
         </div>
 
-        <p className="text-gray-600 mb-6">
+        <p className={`mb-6 ${
+          darkMode ? 'text-gray-400' : 'text-gray-600'
+        }`}>
           Verified professional certifications demonstrating cloud and AI proficiency.
         </p>
 
-        {/* Certification Card */}
+        {/* Certification Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert) => (
             <a
@@ -35,13 +46,33 @@ function Credentials() {
               href={cert.url}
               target="_blank"
               rel="noreferrer"
-              className="p-4 rounded-lg border hover:shadow-md transition-all flex items-center gap-3 hover:bg-blue-50"
-              style={{ borderColor: SECONDARY }}
+              className={`p-4 rounded-lg border transition-all flex items-center gap-3 ${
+                darkMode 
+                  ? 'hover:shadow-lg hover:bg-gray-900/50 border-opacity-50' 
+                  : 'hover:shadow-md hover:bg-gray-50'
+              }`}
+              style={{ borderColor: secondaryColor }}
             >
-              <img src={cert.logo} alt={cert.issuer} className="h-10 w-10 object-contain" />
+              <div className={`h-10 w-10 flex items-center justify-center rounded ${
+                darkMode ? 'bg-white p-1' : ''
+              }`}>
+                <img 
+                  src={cert.logo} 
+                  alt={cert.issuer} 
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <div>
-                <div className="font-semibold text-gray-900">{cert.title}</div>
-                <div className="text-sm text-gray-600">{cert.issuer} · {cert.year}</div>
+                <div className={`font-semibold ${
+                  darkMode ? 'text-white' : 'text-gray-900'
+                }`}>
+                  {cert.title}
+                </div>
+                <div className={`text-sm ${
+                  darkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
+                  {cert.issuer} · {cert.year}
+                </div>
               </div>
             </a>
           ))}
