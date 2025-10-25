@@ -25,7 +25,8 @@ function Hero() {
         <div className="grid lg:grid-cols-3 gap-8 items-center">
 
           {/* Text Section */}
-          <div className="lg:col-span-2">
+          {/* --- THIS LINE IS UPDATED --- */}
+          <div className="lg:col-span-2 row-start-2 lg:row-start-1">
             <h1 className="text-3xl sm:text-4xl font-extrabold" style={{ color: PRIMARY }}>
               Hello. I'm Miehleketo Mathebula
             </h1>
@@ -88,19 +89,20 @@ function Hero() {
             </div>
           </div>
 
-        <aside className="flex flex-col items-center lg:items-center justify-start relative -mt-36 lg:-mt-40 z-10">
-          <img
-            src={`${import.meta.env.BASE_URL}photo.jpg`}
-            alt="Miehleketo Mathebula"
-            className="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shadow-2xl border-4 border-white"
-          />
-          <div className="mt-4 text-center">
-            <div className="font-semibold text-lg">Miehleketo Mathebula</div>
-            <div className="text-sm text-gray-600">
-              AI & Data Engineering · Financial Intelligence · ESG Governance · SDG
+          {/* --- THIS LINE IS UPDATED --- */}
+          <aside className="flex flex-col items-center justify-start relative -mt-36 lg:-mt-40 z-10 row-start-1 lg:row-start-1">
+            <img
+              src={`${import.meta.env.BASE_URL}photo.jpg`}
+              alt="Miehleketo Mathebula"
+              className="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover shadow-2xl border-4 border-white"
+            />
+            <div className="mt-4 text-center">
+              <div className="font-semibold text-lg">Miehleketo Mathebula</div>
+              <div className="text-sm text-gray-600">
+                AI & Data Engineering · Financial Intelligence · ESG Governance · SDG
+              </div>
             </div>
-          </div>
-        </aside>
+          </aside>
 
         </div>
       </div>
