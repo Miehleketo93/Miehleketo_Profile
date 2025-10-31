@@ -73,6 +73,15 @@ function Hero({ darkMode }) {
               >
                 View Research
               </a>
+              {/* === THIS IS THE UPDATED BUTTON === */}
+              <a
+                href="#contact"
+                className="px-5 py-2.5 rounded-lg text-white hover:opacity-90 transition-opacity"
+                style={{ background: primaryColor }}
+              >
+                Get In Touch
+              </a>
+              {/* === END OF UPDATED BUTTON === */}
             </div>
           </div>
 
